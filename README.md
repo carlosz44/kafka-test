@@ -10,6 +10,8 @@ docker-compose up -d
 
 This will create a Kafka environment at [http://localhost:9093](http://localhost:9093) for testing.
 
+[![docker.png](https://i.postimg.cc/L52PsySm/docker.png)](https://postimg.cc/LYQ5C3hW)
+
 Then, install all dependencies and run the `index.js` file:
 
 ```bash
