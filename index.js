@@ -1,5 +1,6 @@
 const kafka = require("kafka-node");
 
+const TOPIC_NAME = "test-app";
 const messages1 = [
   "The IT Crowd",
   "The Office",
@@ -15,7 +16,17 @@ const messages2 = [
 ];
 
 const client = new kafka.KafkaClient({ kafkaHost: "localhost:9093" });
-const consumer = new kafka.Consumer(client, [{ topic: "test-app" }]);
+client.createTopics(
+  [
+    {
+      topic: TOPIC_NAME,
+      partitions: 1,
+      replicationFactor: 1,
+    },
+  ],
+  (error, data) => console.log(error, data)
+);
+const consumer = new kafka.Consumer(client, [{ topic: TOPIC_NAME }]);
 const producer1 = new kafka.Producer(client);
 const producer2 = new kafka.Producer(client);
 
@@ -31,7 +42,7 @@ consumer.on("message", (message) => console.log(message));
         element.producer.send(
           [
             {
-              topic: "test-app",
+              topic: TOPIC_NAME,
               messages:
                 element.messages[
                   Math.floor(Math.random() * element.messages.length)
