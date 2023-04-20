@@ -1,0 +1,22 @@
+{
+  "name": "kafka",
+  "version": "1.0.0",
+  "description": "Kafka test",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/carlosz44/kafka-test.git"
+  },
+  "author": "https://github.com/carlosz44",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/carlosz44/kafka-test/issues"
+  },
+  "homepage": "https://github.com/carlosz44/kafka-test#readme",
+  "dependencies": {
+    "kafka-node": "^5.0.0"
+  }
+}
